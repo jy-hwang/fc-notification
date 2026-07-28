@@ -1,0 +1,8 @@
+
+
+spring:
+  application:
+    name: fc-notification-consumer
+
+server:
+  port: 5060
