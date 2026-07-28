@@ -36,10 +36,16 @@ subprojects {
     dependencies {
         testImplementation platform('org.junit:junit-bom:5.10.0')
         testImplementation 'org.junit.jupiter:junit-jupiter'
+
+        // Gradle 9.x에서 Launcher 에러를 막기 위해 engine과 launcher를 확실하게 주입합니다.
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     }
 
-    tasks.named('test') {
+    test {
         useJUnitPlatform()
+
+        scanForTestClasses = true
     }
 
 
