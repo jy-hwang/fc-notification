@@ -1,0 +1,8 @@
+
+
+spring:
+  application:
+    name: fc-notification
+
+server:
+  port: 5050
